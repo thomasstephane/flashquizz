@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Card</h1>
+  <p><%=@card.question %></p>
+  <form action=<%="/game/#{@game.id}/#{@card.id}"%> method="post">
+    <ul>
+    	<% @choices.each do |choice| %>
+      <li>
+        <button type="radio" name="answer"><%= choice %></button>
+      </li>
+    </ul>
+    <% end %>
+    <input type="submit" value="Answer!">
+  </form>
+  
+</div>
