@@ -3,5 +3,6 @@ get '/create_user' do
 end
 
 post '/create_user' do
-
+  new_user = User.create(params["user"])
+  redirect '/'
 end
