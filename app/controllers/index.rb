@@ -3,9 +3,10 @@ get '/' do
 end
 
 post '/' do
-  user = User.find_by_password(params[:password])
+  user = User.find_by_username(params[:username])
   if params[:password] == user.password
     session[:id] = user.id
+    redirect '/'
   else
     redirect '/'
   end

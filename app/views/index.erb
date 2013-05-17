@@ -1,19 +1,19 @@
 <div class="container">
 
   <h1> FLASHCARDS HOMEPAGE </h1>
-<% if session[:id] %>
-  <form action="/" method="post" autocomplete="on">
-    User Name <input type="text" name="username" required>
-    Password <input type="text" name="password" required>
-    <input type="submit" value="Sign In">
-  </form>
-  <a href="/create_user">Create Your Account</a>
-<% else %>
-  <a href="/logout">Logout</a>
-<% end %>
+  <% if session[:id] %>
+    <a href="/logout">Logout</a>
+  <% else %>
+      <form action="/" method="post" autocomplete="on">
+        User Name <input type="text" name="username" required>
+        Password <input type="text" name="password" required>
+        <input type="submit" value="Sign In">
+      </form>
+    <a href="/create_user">Create Your Account</a>
+  <% end %>
 
 
-<p>DECKS GO IN HERE </p>
+  <p>DECKS GO IN HERE </p>
 
 
 
