@@ -5,11 +5,11 @@
     <ul>
     	<% @choices.each do |choice| %>
       <li>
-        <button type="radio" name="answer"><%= choice %></button>
+        <button type="radio" name="answer" value=<%= choice %>><%= choice %></button>
       </li>
     </ul>
     <% end %>
     <input type="submit" value="Answer!">
   </form>
-  
+  <p><%= @game.score %></p>
 </div>
