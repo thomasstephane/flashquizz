@@ -11,7 +11,8 @@
 	<h2>Top scores</h2>
 	<ol>
 		<li><h1>Name</h1><h1><span>Score</span></h1></li>
-		<% @game.sorted_rank_list.each do |user_score| %>
+		<% @game.sorted_rank_list.reverse.each do |user_score| %>
 			<li><p><%= user_score[:name] %></p><span><%= user_score[:score] %></span></li>
+      <% end %>
 	</ol>
 </div>

@@ -13,19 +13,16 @@ end
 post '/game/:game_id/:card_id' do |game_id, card_id|
 	@card = Card.find_by_id(card_id)
 	@game = Game.find_by_id(game_id)
-	@deck = @game.deck_id
+	@deck = Deck.find(@game.deck_id)
 	@user_answer = params[:answer]
 	@game.progression(@card, @user_answer)
 
-	if Card.find_by_id(@deck.next_card(card_id))
-		redirect "/game/#{game_id}/#{card_id.to_i + 1}"
+	if @deck.next_card(card_id)
+		redirect "/game/#{game_id}/#{@deck.next_card(card_id)}"
 	else
 		redirect "/game/#{game_id}/final"
 	end
 	
 end
 
-def next_card(card_id)
-	card_desired = card_id - 1
-	session[:all_cards][card_desired]
-end
+
