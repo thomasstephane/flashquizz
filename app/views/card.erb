@@ -1,15 +1,23 @@
-<div class="container">
+<div class="main-container">
   <h1>Card</h1>
   <p><%=@card.question %></p>
   <form action=<%="/game/#{@game.id}/#{@card.id}"%> method="post">
     <ul>
-    	<% @choices.each do |choice| %>
-      <li>
-        <button type="radio" name="answer" value=<%= choice %>><%= choice %></button>
-      </li>
-    </ul>
+    	<% @choices.each_with_index do |choice, index| %>
+      <li id="list-card">
+        <div class="container <%= button(index)%>"  style="-webkit-transform: rotate(<%=rotation(choice)%>deg)">
+          <div class="card">
+            <div class="face front">
+              <img src=<%="../../images/button#{index+1}.png"%> alt="" />
+            </div>
+            <div class="face back">
+              <button><%= choice %></button>
+            </div>
+          </div>
+        </div>
+      </li>      
     <% end %>
-    <input type="submit" value="Answer!">
+    </ul>
   </form>
   <p><%= @game.score %></p>
 </div>
