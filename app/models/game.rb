@@ -27,4 +27,27 @@ class Game < ActiveRecord::Base
 		self.cards_shown += 1
 		self.save
 	end
+
+	def get_users
+		Game.where("deck_id = ?", self.deck_id)
+	end
+
+	def user_name
+		user = User.find_by_id(self.user_id)
+		user.username
+	end
+
+
+	def rank_list
+		list = []
+		get_users.each do |game|
+			list << { name: game.user_name, score: game.score }
+		end
+		list
+	end
+
+	def sorted_rank_list
+		rank_list.sort_by {|user_score| user_score[:score] }
+	end
+
 end
