@@ -7,7 +7,6 @@
 <div class="container">
 	<h1> Your Rank: </h1>
 
-
 	<h2>Top scores</h2>
 	<ol>
 		<li><h1>Name</h1><h1><span>Score</span></h1></li>
@@ -15,4 +14,7 @@
 			<li><p><%= user_score[:name] %></p><span><%= user_score[:score] %></span></li>
       <% end %>
 	</ol>
+
+  <div><a href="/logout">Log Out</a></div>
+  <div><a href="/">Play Again</a></div>
 </div>
