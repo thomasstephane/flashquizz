@@ -24,3 +24,7 @@ post '/game/:game_id/:card_id' do |game_id, card_id|
 	
 end
 
+def next_card(card_id)
+	card_desired = card_id - 1
+	session[:all_cards][card_desired].
+end
