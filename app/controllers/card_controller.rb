@@ -26,5 +26,5 @@ end
 
 def next_card(card_id)
 	card_desired = card_id - 1
-	session[:all_cards][card_desired].
+	session[:all_cards][card_desired]
 end
