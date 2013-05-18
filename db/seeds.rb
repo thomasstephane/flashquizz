@@ -1,20 +1,36 @@
-require 'faker'
+@file = {"cards.txt" => "Ruby Terms", "states.txt" => "State Capitals"}
 
-3.times do 
-  @deck = Deck.create(name: Faker::Name.first_name)
 
-  3.times do
-    card = Card.create(answer: Faker::Name.first_name, 
-                question: Faker::Name.first_name,
-                choice2: Faker::Name.first_name,
-                choice3: Faker::Name.first_name,
-                choice4: Faker::Name.first_name
-                )
-    @deck.cards << card
+
+def seed_wrong_answers(card, answers)
+  card.choice2 = answers.select{|ans| ans != card.answer}.sample
+  card.choice3 = answers.select{|ans| ans != card.answer && ans != card.choice2 }.sample
+  card.choice4 = answers.select{|ans| ans != card.answer && ans != card.choice2 && ans != card.choice3}.sample
+end
+
+def generate_deck(file, name)
+
+  deck = Deck.create(name: name)
+
+  line_array = File.readlines(file,"\n\n").map { |a| a.split("\n") }
+  line_array.each { |pair| Card.create(question: pair[0], answer: pair[1], deck_id: deck.id) }
+
+  wrong_answers = []
+  Card.all.each do |card|
+    wrong_answers << card.answer if card.deck_id == deck.id
   end
+  seeding_checking_choices(wrong_answers, deck)
 
 end
 
-5.times do 
-  User.create(username: Faker::Internet.user_name, password: "123")
+def seeding_checking_choices(wrong_answers, deck)
+  Card.all.each do |card|
+    seed_wrong_answers(card, wrong_answers) if  card.deck_id == deck.id
+    card.save
+  end
+end
+
+
+@file.each do |file, name|
+  generate_deck(file, name)
 end
