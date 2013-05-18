@@ -5,7 +5,7 @@
     <ul>
     	<% @choices.each_with_index do |choice, index| %>
       <li id="list-card">
-        <div class="container <%= button(index)%>"  style="-webkit-transform: rotate(<%=rotation(choice)%>deg)">
+        <div class="card-container <%= button(index)%>"  style="-webkit-transform: rotate(<%=rotation(choice)%>deg)">
           <div class="card">
             <div class="face front">
               <img src=<%="../../images/button#{index+1}.png"%> alt="" />

@@ -1,11 +1,23 @@
-
-body {
+html {
   background-image: url('../images/felt.jpg'); 
   background-repeat: repeat;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+  min-width: 100%;
+  min-height: 100%;
+}
 
+body {
+  display: inline-block;
+  min-width: 100%;
+  min-height: 100%;
+  text-align: center;
+  top:  50%;
+  left:  50%;
+  height: 100%
+}
+
+* {
+  color: black;
+  text-shadow: 0 1px 1px #f5f5f5;
 }
 
 li {
@@ -14,6 +26,47 @@ li {
   list-style: none;
   display: inline-block;
   -webkit-perspective: 1000;
+}
+
+h1 {
+  padding-top: 100px;
+}
+
+.front-page-container {
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+}
+
+#sign-in {
+  display: inline;
+  margin-left: 0;
+}
+
+#create-account{
+}
+
+input, input[type="password"], input[type="search"], isindex {
+background-color: transparent;
+border: none;
+color: white;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    white;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    white;
+}
+
+form {
+  display: inline-block;
 }
 
 button {
@@ -25,7 +78,7 @@ button {
   margin: 50px auto;
 }
 
-.container {
+.card-container {
   width: 200px;
   height: 280px;
   -webkit-perspective: 1000;
@@ -34,13 +87,11 @@ button {
 .card {
   width: 200px;
   height: 280px;
-  /*border: 1px solid #000;*/
-  /*border-style: inset;*/
   border-radius: 10px;
   -webkit-transform-style: preserve-3d;
   -webkit-transition: 0.5s;
 }
-  .container:hover .card {
+  .card-container:hover .card {
     -webkit-transform: rotateY(180deg);       
   }
 
@@ -74,7 +125,7 @@ button {
   font-weight: bold; 
   color: #717171;
   overflow: hidden; 
-  background: #cfcfcf;
+  background: #fff;
   -webkit-box-shadow: 0 1px 5px #888;
   text-shadow: 0 1px 1px #f5f5f5;
 }
