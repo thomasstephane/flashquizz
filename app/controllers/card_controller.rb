@@ -4,8 +4,8 @@ get '/game/:game_id/:card_id' do |game_id, card_id|
 	if card_id == "final"
 		erb :final 
 	else
-		p @card = Card.find(card_id)
-		p @choices = [@card.answer, @card.choice2, @card.choice3, @card.choice4].shuffle
+		@card = Card.find(card_id)
+		@choices = [@card.answer, @card.choice2, @card.choice3, @card.choice4].shuffle
 		erb :card
 	end
 end

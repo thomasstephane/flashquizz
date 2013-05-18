@@ -11,10 +11,11 @@ class Game < ActiveRecord::Base
   end
 
   def score
+    p self.cards_shown
   	if self.cards_shown == 0
   		0
   	else
-  		@score = self.cards_correct.to_f / self.cards_shown.to_f
+  	p	@score = self.cards_correct.to_f / self.cards_shown.to_f
   	end
   end
 
@@ -36,7 +37,6 @@ class Game < ActiveRecord::Base
 		user = User.find_by_id(self.user_id)
 		user.username
 	end
-
 
 	def rank_list
 		list = []
