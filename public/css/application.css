@@ -32,6 +32,13 @@ h1 {
   padding-top: 100px;
 }
 
+#create-account {
+  margin-top: 100px;
+}
+#create-account a{
+  text-decoration: none;
+}
+
 .front-page-container {
   margin: 0 auto;
   top: 50%;

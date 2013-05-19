@@ -1,22 +1,23 @@
 <div class="container">
+  <% if session[:id] %>
+    <a href="/logout">Logout</a>
+    <div class="container decks">
+     <% session[:decks].each do |deck| %>
+     <h3><a href=<%= "/create_game/#{deck.id}" %>><%= deck.name %></a>  </h3>
+     <% end %>
+   </div>
 
-<% if session[:id] %>
-  <a href="/logout">Logout</a>
-<div class="container decks">
- <% session[:decks].each do |deck| %>
- <h3><a href=<%= "/create_game/#{deck.id}" %>><%= deck.name %></a>  </h3>
- <% end %>
+  <% else %>
+    <h1> FLASHCARDS </h1>
+    <div class="front-page-container container">
+      <form action="/" method="post" autocomplete="on">
+        <input type="text" name="username" required placeholder="User Name">
+        <input type="password" name="password" required placeholder="Password">
+        <div id="sign-in"><input type="submit" value="Sign In"></div>
+      </form>
+      <div id="create-account"><a href="/create_user">Create Your Account</a></div>
+    </div>
+  <% end %>
 </div>
 
-<% else %>
-<h1> FLASHCARDS HOMEPAGE </h1>
-<div class="front-page-container container">
-<form action="/" method="post" autocomplete="on">
-<input type="text" name="username" required placeholder="User Name">
-<input type="password" name="password" required placeholder="Password">
-  <div id="sign-in"><input type="submit" value="Sign In"></div>
-  <div id="create-account"><a href="/create_user">Create Your Account</a></div>
-</form>
-</div>
-<% end %>
-</div>
+
