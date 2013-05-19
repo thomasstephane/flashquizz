@@ -18,4 +18,8 @@ class Deck < ActiveRecord::Base
     card ? card.id : false
   end
 
+  def number_of_cards
+    self.cards.count
+  end
+
 end

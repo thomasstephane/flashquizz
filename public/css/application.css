@@ -10,9 +10,11 @@ body {
   min-width: 100%;
   min-height: 100%;
   text-align: center;
-  top:  50%;
-  left:  50%;
   height: 100%
+}
+
+#title {
+  margin: 50px;
 }
 
 .decks a {
@@ -20,19 +22,23 @@ body {
 }
 
 .container.decks {
-  margin-top: 200px;
-}
-
-#yes {
-  margin-bottom: 100px;
+  top: 50%;
 }
 
 .main-container a {
   text-decoration: none;
 }
+
 * {
-  color: black;
+  color: #1f4129;
   text-shadow: 0 1px 1px #f5f5f5;
+  font-size: 24px;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+}
+a:hover {
+  text-shadow: 0 1px 1px #FFD700;  
 }
 
 li {
@@ -43,48 +49,64 @@ li {
   -webkit-perspective: 1000;
 }
 
-h1 {
-  padding-top: 100px;
-}
-
-#create-account {
+.link {
   margin-top: 100px;
+  margin-bottom: 50px;
 }
-#create-account a{
+.link a{
   text-decoration: none;
+  font-size: 22px;
 }
 
 .front-page-container {
+  position: fixed;
   margin: 0 auto;
   top: 50%;
   left: 50%;
+  margin-left: -310px;
+  margin-top: -65px;
 }
 
-#sign-in {
-  display: inline;
+.submit-button {
   margin-left: 0;
+  padding-top: 36px;
+}
+.submit-button input {
+  font-size: 26px;
+  /*text-shadow: 0 1px 1px #FFD700;*/
+}
+.submit-button input:hover {
+  text-shadow: 0 1px 1px #FFD700;
 }
 
-#create-account{
+.fields{
+  padding-bottom: 36px;
 }
 
 input, input[type="password"], input[type="search"], isindex {
-background-color: transparent;
-border: none;
-color: white;
+  background-color: transparent;
+  border: none;
+  color: #1f4129;
+  text-shadow: 0 1px 1px #f5f5f5;
+
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    white;
+  color:    #2e613c;
+  text-align: center;
+  text-shadow: 0 1px 1px #f5f5f5;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    white;
+    color:    #2e613c;
+    text-align: center;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    white;
+    color:    #2e613c;
+    text-align: center;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    white;
+    color:    #2e613c;
+    text-align: center;
 }
 
 form {
@@ -150,4 +172,15 @@ button {
   background: #fff;
   -webkit-box-shadow: 0 1px 5px #888;
   text-shadow: 0 1px 1px #f5f5f5;
+}
+
+.button1 button p {
+  font-size: 17px; 
+  line-height: 28px;
+  font-weight: bold; 
+  color: #717171;
+  overflow: hidden; 
+  background: #fff;
+  text-shadow: 0 1px 1px #f5f5f5;
+
 }

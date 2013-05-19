@@ -1,8 +1,11 @@
-<div class="container">
-  <h1>CREATE YOUR ACCOUNT</h1>
+<div class="front-page-container">
   <form action="/create_user" method="post" autocomplete="on">
-    <input type="text" name="user[username]" required placeholder="User Name">
-    <input type="password" name="user[password]" required placeholder="Password">
-    <input type="submit" value="Submit">
+    <div class="fields">
+    <input type="text" name="user[username]" required placeholder="User Name" autocomplete="off">
+    <input type="password" name="user[password]" required placeholder="Password" autocomplete="off"></div>
+    <div class="submit-button">
+    <input type="submit" value="Create!">
+    </div>
   </form>
+  <div class="link"><a href="/">Sign in!</a></div>
 </div>

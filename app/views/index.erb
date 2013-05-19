@@ -1,35 +1,38 @@
 <div class="container">
-  <% if session[:id] %>
-    
+   <% if session[:id] %>
+  
     <div class="container decks">
-      <div id="yes">
-        <% session[:decks].each do |deck| %>
-          <li id="list-card">
-            <div class="card-container button1"  style="-webkit-transform: rotate(<%=rotationplus(deck.name)%>deg)">
-              <div class="card">
-                <div class="face front">
-                  <img src=<%="../../images/button5.png"%> alt="" />
-                </div>
-                <div class="face back">
-                  <button type="radio" name="deck" value=<%= deck.id %>><%= deck.name %></button>
-                </div>
+      <% session[:decks].each do |deck| %>
+        <li id="list-card">
+          <div class="card-container button1"  style="-webkit-transform: rotate(<%=rotationplus(deck.name)%>deg)">
+            <div class="card">
+              <div class="face front">
+                <img src=<%="../../images/button5.png"%> alt="" />
+              </div>
+              <div class="face back">
+                <a href=<%= "/create_game/#{deck.id}" %>><button type="radio" name="deck" value=<%= deck.id %>>
+                  <p><%= deck.name %></p><p><%= deck.number_of_cards%> cards</p>
+                </button></a>
               </div>
             </div>
           </li>
         <% end %>
       </div>
-      <a href="/logout" >Logout</a>
+      <div class="link">
+        <a href="/logout" >Logout</a>
+      </div>
    </div>
 
   <% else %>
-    <h1> FLASHCARDS </h1>
+    
     <div class="front-page-container container">
-      <form action="/" method="post" autocomplete="on">
-        <input type="text" name="username" required placeholder="User Name">
-        <input type="password" name="password" required placeholder="Password">
-        <div id="sign-in"><input type="submit" value="Sign In"></div>
+      <form action="/" method="post" autocomplete="off">
+        <div class="fields">
+        <input type="text" name="username" required placeholder="User Name" />
+        <input type="password" name="password" required placeholder="Password" /></div>
+        <div class="submit-button"><input type="submit" value="Sign in!"></div>
       </form>
-      <div id="create-account"><a href="/create_user">Create Your Account</a></div>
+      <div class="link"><a href="/create_user">Create Your Account</a></div>
     </div>
   <% end %>
 </div>
