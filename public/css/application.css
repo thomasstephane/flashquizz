@@ -15,6 +15,21 @@ body {
   height: 100%
 }
 
+.decks a {
+  text-decoration: none;
+}
+
+.container.decks {
+  margin-top: 200px;
+}
+
+#yes {
+  margin-bottom: 100px;
+}
+
+.main-container a {
+  text-decoration: none;
+}
 * {
   color: black;
   text-shadow: 0 1px 1px #f5f5f5;

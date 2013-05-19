@@ -1,10 +1,13 @@
 <div class="container">
   <% if session[:id] %>
-    <a href="/logout">Logout</a>
+    
     <div class="container decks">
-     <% session[:decks].each do |deck| %>
-     <h3><a href=<%= "/create_game/#{deck.id}" %>><%= deck.name %></a>  </h3>
-     <% end %>
+      <div id="yes">
+        <% session[:decks].each do |deck| %>
+          <h3><a href=<%= "/create_game/#{deck.id}" %>><%= deck.name %></a>  </h3>
+        <% end %>
+      </div>
+      <a href="/logout" >Logout</a>
    </div>
 
   <% else %>
