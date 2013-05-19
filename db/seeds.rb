@@ -1,4 +1,4 @@
-@file = {"cards.txt" => "Ruby Terms", "states.txt" => "State Capitals"}
+@file = {"cards.txt" => "Ruby Terms", "states.txt" => "State Capitals", "db/boots.txt" => "Boots"}
 
 
 
