@@ -4,7 +4,7 @@ class Card < ActiveRecord::Base
   validates :question, :answer, :presence => true
 
   def check(user_answer)
-  	self.answer == user_answer
+  	self.answer.split(" ")[0] == user_answer
   end
 
 end
