@@ -82,7 +82,10 @@ Lincoln
 Nevada  
 Carson City
 
-NewJersey  
+New Hampshire
+Concord
+
+New Jersey  
 Trenton
 
 New Mexico  
@@ -144,4 +147,3 @@ Madison
 
 Wyoming 
 Cheyenne
-
