@@ -1,5 +1,5 @@
 html {
-  background-image: url('../images/felt.jpg'); 
+  background-image: url('../images/felt2.jpg'); 
   background-repeat: repeat;
   min-width: 100%;
   min-height: 100%;
@@ -53,7 +53,7 @@ li {
 }
 
 .link {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 .link a{

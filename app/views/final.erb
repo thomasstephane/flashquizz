@@ -1,20 +1,35 @@
 <div class="container">
   <h1>Game Over!</h1>
-  Score: <%=@game.score.to_f %>
+  <div class="nb_tiled">
+    <p>Score: </p>
+    <div class="score" style="-webkit-transform: rotate(<%=rotation((@game.score).to_s)%>deg)">
+      <p><%= "#{@game.score}"%></p>
+    </div>
+    <div class="score" style="-webkit-transform: rotate(<%=rotation((@game.score * 2).to_s)%>deg)">
+      <p>%</p>
+    </div>
+  </div>
 
 </div>
 
 <div class="container">
-	<h1> Your Rank: </h1>
 
-	<h2>Top scores</h2>
-	<ol>
-		<li><h1>Name</h1><h1><span>Score</span></h1></li>
-		<% @game.sorted_rank_list.reverse.each do |user_score| %>
-			<li><p><%= user_score[:name] %></p><span><%= user_score[:score] %></span></li>
-      <% end %>
-	</ol>
+	<h1>Top scores</h1>
+	
+  <% @game.sorted_rank_list.reverse.each do |user_score| %>
+  <div class="progression">
+    <div class="nb_tiled">
+      <p><%= user_score[:name] %>    </p>
+      <div class="score" style="-webkit-transform: rotate(<%=rotation((@game.score).to_s)%>deg)">
+        <p><%= "#{user_score[:score]}" %></p>
+      </div>
+      <div class="score" style="-webkit-transform: rotate(<%=rotation((@game.score * 2).to_s)%>deg)">
+        <p>%</p>
+      </div>
+    </div>
+  </div>
+  <% end %>
 
-  <div><a href="/logout">Log Out</a></div>
-  <div><a href="/">Play Again</a></div>
+  <div class="link"><a href="/logout">Log Out</a></div>
+  <div class="link"><a href="/">Play Again</a></div>
 </div>

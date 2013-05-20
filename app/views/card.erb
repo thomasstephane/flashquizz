@@ -15,20 +15,20 @@
           </div>
         </div>
       </li>      
-    <% end %>
+      <% end %>
     </ul>
   </form>
   <div class="progression">
-  <div class="nb_tiled">
-  <p>Success: </p><div class="score" style="-webkit-transform: rotate(<%=rotation((@game.id + @card.id).to_s)%>deg)"><p><%= "#{@game.score}" %></p></div><div class="score" style="-webkit-transform: rotate(<%=rotation((@game.id + 2 * @card.id).to_s)%>deg)"><p>%</p></div>
-  <div class="nb_tiled">
-  <p>Cards done: </p><div class="score" style="-webkit-transform: rotate(<%=rotation((@game.id + 3 + @card.id).to_s)%>deg)"><p><%= "#{@game.cards_shown}" %></p></div>
-    </div>
-
     <div class="nb_tiled">
-    <p>Cards left: </p><div class="score" style="-webkit-transform: rotate(<%=rotation((@game.id + @card.id).to_s)%>deg)"><p><%= "#{@game.nb_cards - @game.cards_shown}" %></p></div>
-  </div>
-</div>
+      <p>Success: </p><div class="score" style="-webkit-transform: rotate(<%=rotation((@game.id + @card.id).to_s)%>deg)"><p><%= "#{@game.score}" %></p></div><div class="score" style="-webkit-transform: rotate(<%=rotation((@game.id + 2 * @card.id).to_s)%>deg)"><p>%</p></div>
+      <div class="nb_tiled">
+        <p>Cards done: </p><div class="score" style="-webkit-transform: rotate(<%=rotation((@game.id + 3 + @card.id).to_s)%>deg)"><p><%= "#{@game.cards_shown}" %></p></div>
+      </div>
+
+      <div class="nb_tiled">
+        <p>Cards left: </p><div class="score" style="-webkit-transform: rotate(<%=rotation((@game.id + @card.id).to_s)%>deg)"><p><%= "#{@game.nb_cards - @game.cards_shown}" %></p></div>
+      </div>
+    </div>
     <div><a href="/">Choose Another Deck</a></div><br>
     <div><a href="/logout">Log Out</a></div>
-</div>
+  </div>
