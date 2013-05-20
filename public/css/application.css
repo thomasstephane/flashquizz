@@ -25,6 +25,10 @@ body {
 .container.decks {
   top: 50%;
 }
+.main-container {
+  margin-left: 80px;
+  margin-right: 80px;
+}
 
 .main-container a {
   text-decoration: none;
