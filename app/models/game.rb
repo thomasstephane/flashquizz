@@ -15,7 +15,7 @@ class Game < ActiveRecord::Base
   	if self.cards_shown == 0
   		0
   	else
-  	p	@score = self.cards_correct.to_f / self.cards_shown.to_f
+  	p	@score = ((self.cards_correct.to_f / self.cards_shown.to_f) * 100) .to_i
   	end
   end
 
@@ -49,5 +49,9 @@ class Game < ActiveRecord::Base
 	def sorted_rank_list
 		rank_list.sort_by {|user_score| user_score[:score] }
 	end
+
+  def nb_cards
+    Deck.find(self.deck_id).number_of_cards
+  end
 
 end
